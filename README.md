@@ -23,7 +23,7 @@ lmax_var = 2048
 latdir = 48.253 # Dipole latitude
 longdir = 264.021 # Dipole longitude
 
-cl_planck_TT = hp.read_cl('cl_TT_planck_2019.fits')
+cl_planck_TT = hp.read_cl('cl_TT_planck_2019.fits') # this file is present on /planck_cl folder
 modulation_map = doppler_boost_map_dir_s(beta_var, nside_var, latdir, longdir) # modulation map on pixel space
 
 #caching estimator theoretical terms
