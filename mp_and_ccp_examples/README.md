@@ -1,1 +1,1 @@
-### Here is presented part of MP and CCP pipelines. The Healpix Boost (https://github.com/mquartin/healpix-boost) related code is not presentd here. 
+### Here is presented part of MP and CCP pipelines, but it can be easily extended to generate all simulations just by changing parameters. The Healpix Boost (https://github.com/mquartin/healpix-boost) related codes are not presented here. 
