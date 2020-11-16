@@ -68,3 +68,11 @@ As the estimator is one of the most important features of this code this is why 
 * threadpoolctl
 * tqdm
 * Mathematica (DD demonstration and part of analysis)
+
+## References
+
+* [Amendola et al. (2011)](https://arxiv.org/abs/1008.1183)
+
+* [R. Catena and A. Notari (2012)](https://arxiv.org/abs/1210.2731).
+
+* [A. Notari, M. Quartin and R. Catena (2014)](https://arxiv.org/abs/1304.3506).
