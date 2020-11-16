@@ -8,7 +8,7 @@ The cmb-aber-dopp repository include all basic code to reproduce some Planck sys
 ## Basic usage example of the python module
 First, copy the cmbaberdopp_beta0p8.py (/python_module) module and cl_TT_planck_2019.fits (/planck_cl) files to same directory of your python code.
 
-To generate a simple example we start with Doppler directly on the pixel space, with python. Let's start doing 32 simulations with ![\beta^D2
+To generate a simple example we start with Doppler directly on the pixel space, with python. Let's start doing 32 CMB ideal simulations with ![\beta^D2
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) pointing on dipole direction, without aberration, and estimate the ![\beta^D
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED%0A) using ![\ell , \ell+1
 ](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cell+%2C+%5Cell%2B1%0A) correlations.
