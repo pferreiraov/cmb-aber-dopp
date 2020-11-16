@@ -61,7 +61,7 @@ As the estimator is one of the most important features of this code this is why 
 * Healpix boost
 * Healpy (most of the code)
 * numpy
-* pymp
+* pymp (most of the code)
 * astropy
 * threadpoolctl
 * tqdm
