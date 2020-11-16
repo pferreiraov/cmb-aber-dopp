@@ -54,7 +54,7 @@ print('std:',np.std(beta_d_vector_list))
 ```
 
 The functions htheofast and betafast are the implematation of the estimator introduced by [Amendola et al. (2011)](https://arxiv.org/abs/1008.1183). 
-As the estimator is one of the most important features of this code this is why the example is focused on use it. Other important functions are the "dipole_doppler_" related. 
+As the estimator is one of the most important features of this code this is why the example is focused on use it. Other important functions are the "dipole_doppler_", related to the Dipole Distortion effect. 
 
 ## Dependencies
 * python 3 (most of the code)
