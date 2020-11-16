@@ -1,6 +1,6 @@
 # cmb-aber-dopp (version 0.1)
 
-The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), simulate the Main Pipeline (MP) and Cros-check pipeline (CCP) (to generate aberrated, Doplered and boosted simulations here is used the Healpix Boost core - www.github.com/mquartin/healpix-boost) and estimate the ![\beta^A
+The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), simulate the Main Pipeline (MP) and Cross-check pipeline (CCP) (to generate aberrated, Dopplered and boosted simulations here is used the Healpix Boost code - www.github.com/mquartin/healpix-boost) and estimate the ![\beta^A
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EA%0A),![\beta^D
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED%0A) and ![\beta^B
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EB%0A) observables on Planck data. For the DD case the derivation of the equations are included. To cross-check Healpix Boost code (mainly when using polarization maps), DD cached maps and for fast tests, here it's included some python code for aberration and Doppler directly on pixel space. Some plots and source data for plots are included.
@@ -9,7 +9,9 @@ The cmb-aber-dopp repository include all basic code to reproduce some Planck sys
 First, copy the cmbaberdopp_beta0p8.py module and cl_TT_planck_2019.fits files to same directory of your python code.
 
 To generate a simple example we start with Doppler directly on the pixel space, with pyhton. Lets start doing 64 simulations with ![\beta^D2
-](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) and no aberration.
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) and no aberration, and estimate the ![\beta^D
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED%0A) using ![\ell , \ell+1
+](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cell+%2C+%5Cell%2B1%0A) correlations.
 
 
 ```python
