@@ -46,8 +46,8 @@ for i in tqdm(range(32)):
     # 0 for Ab, 1 for Dopp and 2 for Boost - as we introduced only Dopp I'm getting only the final beta vector of Doppler estimator, others will be correlation that you can remove a posteriori.
     
 beta_d_vector_list = [np.linalg.norm(np.loadtxt('betadopp_sim'+str(i)+'.dat')) for i in range(32)]
-print('mean:',np.mean(beta_d_abs_list))
-print('std:',np.std(beta_d_abs_list))
+print('mean:',np.mean(beta_d_vector_list))
+print('std:',np.std(beta_d_vector_list))
 
 ```
 
