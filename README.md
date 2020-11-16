@@ -16,6 +16,7 @@ To generate a simple example we start with Doppler directly on the pixel space, 
 from cmbaberdopp_beta0p8 import *
 import healpy as hp
 import numpy as np
+from tqdm import tqdm
 
 beta_var = 0.00123 # Planck CMB dipole
 nside_var = 2048 # Planck nside
@@ -33,10 +34,10 @@ binsize_estim = 10
 htheofast(cl_planck_TT,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim)
 
 # generating 64 simulations and estimating the betas (A,D,B)
-for i in range(64):
-    gaussianmap = hp.synfast(cl_planck_TT, nside_var, lmax=lmax_var)
-    doplered_map = gaussianmap*modulation_map
-    doplered_alm = hp.map2alm(doplered_map)
+for i in tqdm(range(64)):
+    gaussianmap = hp.synfast(cl_planck_TT, nside_var, lmax=lmax_var,verbose=False)
+    dopplered_map = gaussianmap*modulation_map
+    doplered_alm = hp.map2alm(dopplered_map,iter=1) # iter=1 for fast test
     doplered_alm = reorder_idxpy2pix(doplered_alm) # changing from Healpy to Healpix fortran index order - betafast estimator only understand this ordering.
     betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm = betafast(doplered_alm,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim,return_var=True) 
     # returns betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm
