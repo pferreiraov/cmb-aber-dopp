@@ -1,6 +1,6 @@
 # cmb-aber-dopp (version 0.1)
 
-The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), generate simulations of the Main Pipeline (MP) and Cross-check pipeline (CCP) (to generate aberrated, Dopplered and boosted simulations here is used the Healpix Boost code - www.github.com/mquartin/healpix-boost) and estimate the ![\beta^A
+The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), generate simulations of the Main Pipeline (MP) and Cross-check pipeline (CCP) (to generate aberrated, Dopplered and boosted simulations here is used the [Healpix Boost code](www.github.com/mquartin/healpix-boost)) and estimate the ![\beta^A
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EA%0A),![\beta^D
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED%0A) and ![\beta^B
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EB%0A) observables on Planck data. For the DD case the derivation of the equations are included (needs [Mathematica](https://www.wolfram.com/mathematica/)). To cross-check Healpix Boost code (mainly when using polarization maps), DD cached maps and for fast tests, here it's included some python code for aberration and Doppler directly on pixel space. Some plots and source data for plots are included.
