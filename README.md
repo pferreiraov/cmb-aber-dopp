@@ -1,6 +1,6 @@
 # cmb-aber-dopp (version 0.2)
 
-## Edit 04/14/21: 
+## Edit 14/04/21: 
 * Small corrections on some comments and variable names
 * Addition of CCP alternative directly on harmonic space
 * Addition of realistic and crossed expected error function with examples (forecasts).
