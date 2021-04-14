@@ -1,9 +1,9 @@
 # cmb-aber-dopp (version 0.2)
 
 ## Edit 14/04/21: 
-* Small corrections on some comments and variable names
 * Addition of CCP alternative directly on harmonic space
 * Addition of realistic and crossed expected error function with examples (forecasts).
+* Small corrections on some comments and variable names
 
 The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), generate simulations of the Main Pipeline (MP) and Cross-check pipeline (CCP) (to generate aberrated, Dopplered and boosted simulations here is used the [Healpix Boost code](www.github.com/mquartin/healpix-boost)) and estimate the ![\beta^A
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EA%0A),![\beta^D
