@@ -1,4 +1,9 @@
-# cmb-aber-dopp (version 0.1)
+# cmb-aber-dopp (version 0.2)
+
+## Edit 04/14/21: 
+* Small corrections on some comments and variable names
+* Addition of CCP alternative directly on harmonic space
+* Addition of realistic and crossed expected error function with examples (forecasts).
 
 The cmb-aber-dopp repository include all basic code to reproduce some Planck systematics as the Dipole Distortion (DD), generate simulations of the Main Pipeline (MP) and Cross-check pipeline (CCP) (to generate aberrated, Dopplered and boosted simulations here is used the [Healpix Boost code](www.github.com/mquartin/healpix-boost)) and estimate the ![\beta^A
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EA%0A),![\beta^D
@@ -6,7 +11,7 @@ The cmb-aber-dopp repository include all basic code to reproduce some Planck sys
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5EB%0A) observables on Planck data. For the DD case the derivation of the equations are included (needs [Mathematica](https://www.wolfram.com/mathematica/)). To cross-check Healpix Boost code (mainly when using polarization maps), DD cached maps and for fast tests, here it's included some python code for aberration and Doppler directly on pixel space. Some plots and source data for plots are included.
 
 ## Basic usage example of the python module
-First, copy the cmbaberdopp_beta0p8.py (/python_module) module and cl_TT_planck_2019.fits (/planck_cl) files to same directory of your python code.
+First, copy the cmbaberdopp.py (/python_module) module and cl_TT_planck_2019.fits (/planck_cl) files to same directory of your python code.
 
 To generate a simple example we start with Doppler directly on the pixel space, with python. Let's start doing 32 CMB ideal simulations with ![\beta^D2
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) pointing on dipole direction, without aberration, and estimate the ![\beta^D
