@@ -20,7 +20,7 @@ To generate a simple example we start with Doppler directly on the pixel space, 
 
 
 ```python
-from cmbaberdopp_beta0p8 import *
+from cmbaberdopp import *
 import healpy as hp
 import numpy as np
 from tqdm import tqdm
