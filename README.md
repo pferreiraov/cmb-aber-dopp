@@ -48,7 +48,7 @@ for i in tqdm(range(nsims)):
     dopplered_map = gaussianmap*modulation_map
     doplered_alm = hp.map2alm(dopplered_map,iter=1) # iter=1 for fast test
     doplered_alm = reorder_idxpy2pix(doplered_alm,threads=n_threads) # changing from Healpy to Healpix fortran index order - betafast estimator only understand this ordering.
-    betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm = betafast(doplered_alm,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim,threads=n_threads,return_var=True) 
+    betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm = betafast(doplered_alm,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim,threads=n_threads,verbose=False,return_var=True) 
     # returns betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm
     np.savetxt('betadopp_sim_'+str(i)+'.dat',betatotal[1]) 
     # 0 for Ab, 1 for Dopp and 2 for Boost - as we introduced only Dopp I'm getting only the final beta vector of Doppler estimator, others will be correlation that you can remove a posteriori.
