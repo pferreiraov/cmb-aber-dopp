@@ -14,7 +14,7 @@ The cmb-aber-dopp repository include all basic code to reproduce some Planck sys
 First, copy the cmbaberdopp.py (/python_module) module and cl_TT_planck_2019.fits (/planck_cl) files to same directory of your python code.
 
 To generate a simple example we start with Doppler directly on the pixel space, with python. Let's start doing 32 CMB ideal simulations with ![\beta^D2
-](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) pointing on dipole direction, without aberration, and estimate the ![\beta^D
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED=0.00123%0A) pointing in the north direction, without aberration, and estimate the ![\beta^D
 ](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbeta%5ED%0A) using ![\ell , \ell+1
 ](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cell+%2C+%5Cell%2B1%0A) correlations.
 
@@ -28,8 +28,9 @@ from tqdm import tqdm
 beta_var = 0.00123 # Planck CMB dipole
 nside_var = 2048 # Planck nside
 lmax_var = 2048
-latdir = 48.253 # Dipole latitude
-longdir = 264.021 # Dipole longitude
+nsims = 32
+latdir = 0 # 48.253  Dipole latitude
+longdir = 0 # 264.021  Dipole longitude
 
 cl_planck_TT = hp.read_cl('cl_TT_planck_2019.fits') # this file is present on /planck_cl folder
 modulation_map = doppler_boost_map_dir_s(beta_var, nside_var, latdir, longdir) # modulation map on pixel space
@@ -42,17 +43,17 @@ htheofast(cl_planck_TT,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim)
 
 # generating 32 simulations and estimating the betas (A,D,B)
 n_threads = 4
-for i in tqdm(range(32)):
+for i in tqdm(range(nsims)):
     gaussianmap = hp.synfast(cl_planck_TT, nside_var, lmax=lmax_var,verbose=False)
     dopplered_map = gaussianmap*modulation_map
     doplered_alm = hp.map2alm(dopplered_map,iter=1) # iter=1 for fast test
     doplered_alm = reorder_idxpy2pix(doplered_alm,threads=n_threads) # changing from Healpy to Healpix fortran index order - betafast estimator only understand this ordering.
     betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm = betafast(doplered_alm,lmin=lmin_estim,lmax=lmax_estim,binsize=binsize_estim,threads=n_threads,return_var=True) 
     # returns betaabbins, betadoppbins, betaboostbins, betatotal, betatotalnorm
-    np.savetxt('betadopp_sim'+str(i)+'.dat',betatotal[1]) 
+    np.savetxt('betadopp_sim_'+str(i)+'.dat',betatotal[1]) 
     # 0 for Ab, 1 for Dopp and 2 for Boost - as we introduced only Dopp I'm getting only the final beta vector of Doppler estimator, others will be correlation that you can remove a posteriori.
     
-beta_d_vector_list = [np.linalg.norm(np.loadtxt('betadopp_sim'+str(i)+'.dat')) for i in range(32)]
+beta_d_vector_list = [np.loadtxt('betadopp_sim_'+str(i)+'.dat')[2] for i in range(nsims)] # 2 is for z direction value (0 for x and 1 for y).
 print('mean:',np.mean(beta_d_vector_list))
 print('std:',np.std(beta_d_vector_list))
 
