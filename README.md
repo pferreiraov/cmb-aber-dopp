@@ -29,7 +29,7 @@ beta_var = 0.00123 # Planck CMB dipole
 nside_var = 2048 # Planck nside
 lmax_var = 2048
 nsims = 32
-latdir = 0 # 48.253  Dipole latitude
+latdir = 90 # 48.253  Dipole latitude
 longdir = 0 # 264.021  Dipole longitude
 
 cl_planck_TT = hp.read_cl('cl_TT_planck_2019.fits') # this file is present on /planck_cl folder
