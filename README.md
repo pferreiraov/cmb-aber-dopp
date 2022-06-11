@@ -1,7 +1,7 @@
 # cmb-aber-dopp (version 0.2)
 
 ## Edit 14/02/22
-The old wrong noise simulations pipeline was removed, it was only a draft that I forgot to update. As soon as possible I will update it with the correct one (the final version used in the articles), organized and with comments.
+The old wrong noise simulations pipeline was removed.
 
 ## Edit 14/04/21: 
 * Addition of CCP alternative directly on harmonic space
